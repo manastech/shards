@@ -14,7 +14,7 @@ module Shards
     end
 
     def with_shard(metadata, lock = nil)
-      Dir.chdir(application_path) do
+      Dir.cd(application_path) do
         File.write "shard.yml", to_shard_yaml(metadata)
         File.write "shard.lock", to_lock_yaml(lock) if lock
         yield
@@ -69,13 +69,13 @@ module Shards
 
     def application_path
       @application_path ||= File.expand_path("../../tmp/integration", __DIR__).tap do |path|
-        if File.exists?(path)
-          run("rm -rf #{path}/*", capture: false)
-          run("rm -rf #{path}/.shards", capture: false)
-        else
-          Dir.mkdir_p(path)
-        end
-      end
+                              if File.exists?(path)
+                                run("rm -rf #{path}/*", capture: false)
+                                run("rm -rf #{path}/.shards", capture: false)
+                              else
+                                Dir.mkdir_p(path)
+                              end
+                            end
     end
   end
 end
