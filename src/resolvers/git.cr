@@ -180,7 +180,7 @@ module Shards
     private def run(command, path = local_path, capture = false)
       # Shards.logger.debug { "cd #{path}" }
 
-      Dir.chdir(path) do
+      Dir.cd(path) do
         Shards.logger.debug command
 
         output = capture ? StringIO.new : false
