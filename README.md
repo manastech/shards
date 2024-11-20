@@ -2,6 +2,15 @@
 
 Dependency manager for the [Crystal language](http://crystal-lang.org).
 
+> [!IMPORTANT]
+> This fork is no longer supported or updated by Manas.Tech,
+> therefore we have archived the repository.
+> 
+> The contents are still available readonly, and active Shards development
+> still happens at [crystal-lang/shards](https://github.com/crystal-lang/shards/).
+>
+> If you have further questions, please reach out on https://forum.crystal-lang.org
+> or crystal@manas.tech
 
 ## Usage
 
